@@ -1,10 +1,12 @@
+import { theme } from "./assets/theme";
+import { ThemeProvider } from "@mui/material";
 
 const App = () => {
   return (
-    <div className="App">
-      
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="App"></div>
+    </ThemeProvider>
   );
-}
+};
 
 export default App;

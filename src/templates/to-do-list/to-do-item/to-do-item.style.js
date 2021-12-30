@@ -1,6 +1,6 @@
 import { makeStyles } from "@mui/styles";
 
-export const useStyles = makeStyles({
+export const useToDoItemClasses = makeStyles({
   container: {
     marginTop: "10px",
   },

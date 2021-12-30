@@ -1,19 +1,18 @@
 import React from "react";
-import {
-  Card,
-  Typography,
-  Container,
-  IconButton,
-  CardContent,
-} from "@mui/material";
-import { useDispatch, useSelector } from "react-redux";
+import Card from "@mui/material/Card";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
+import CardContent from "@mui/material/CardContent";
+import IconButton from "@mui/material/IconButton";
 import DeleteSharpIcon from "@mui/icons-material/DeleteSharp";
 import CheckIcon from "@mui/icons-material/Check";
-import { useStyles } from "./to-do-item.style";
-import { deleteToDoAction } from "../store/toDo/actions";
+
+import { useDispatch, useSelector } from "react-redux";
+import { useToDoItemClasses } from "./to-do-item.style";
+import { deleteToDoAction } from "../../../store/toDo/actions";
 
 const ToDoItem = () => {
-  const classes = useStyles();
+  const classes = useToDoItemClasses();
   const dispatch = useDispatch();
 
   return (

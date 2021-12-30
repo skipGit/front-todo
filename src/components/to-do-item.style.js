@@ -1,0 +1,16 @@
+import { makeStyles } from "@mui/styles";
+
+export const useStyles = makeStyles({
+  container: {
+    marginTop: "10px",
+  },
+  content: {    
+    display: "flex",
+    flexDirection: "row",
+  },
+  typo: {
+    width: "100%",
+    paddingLeft: "20px",
+    paddingTop: "10px",
+  },
+});

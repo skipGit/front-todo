@@ -14,7 +14,7 @@ const ToDoList = () => {
       {todos.length > 0 ? (
         <Container>
           {todos.map((todo) => (
-            <ToDoItem key={todo.id} message={todo.message} />
+            <ToDoItem id={todo.id} key={todo.id} message={todo.message} />
           ))}
         </Container>
       ) : (

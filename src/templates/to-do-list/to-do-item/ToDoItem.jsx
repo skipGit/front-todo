@@ -11,16 +11,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { useToDoItemClasses } from "./to-do-item.style";
 import { deleteToDoAction } from "../../../store/toDo/actions";
 
-const ToDoItem = () => {
+const ToDoItem = ({message, isCompleted}) => {
   const classes = useToDoItemClasses();
   const dispatch = useDispatch();
-
+  
   return (
     <Container className={classes.container} maxWidth="md">
       <Card>
         <CardContent className={classes.content}>
           <Typography className={classes.typo} align="left">
-            Lorem ipsum dolor sit amet
+            {message}
           </Typography>
           <IconButton>
             <CheckIcon fontSize="small" />

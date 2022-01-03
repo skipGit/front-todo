@@ -1,11 +1,11 @@
 import { theme } from "./assets/theme";
 import { ThemeProvider } from "@mui/material";
-import ToDoItem from "./templates/to-do-list/to-do-item/ToDoItem";
+import ToDoList from "./templates/to-do-list/ToDoList";
 
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      <ToDoItem />
+      <ToDoList />
     </ThemeProvider>
   );
 };

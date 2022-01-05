@@ -1,7 +1,10 @@
-import { initialState } from "./constants";
-import { ADD_TODO } from "./constants";
-import { DELETE_TODO } from "./constants";
-import { TOGGLE_TODO } from "./constants";
+import {
+  initialState,
+  ADD_TODO,
+  DELETE_TODO,
+  TOGGLE_TODO,
+  EDIT_TODO,
+} from "./constants";
 
 export const toDoReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -12,6 +15,17 @@ export const toDoReducer = (state = initialState, action) => {
       return {
         ...state,
         todos: state.todos.filter((todo) => todo.id !== action.payload),
+      };
+
+    case EDIT_TODO:
+      return {
+        ...state,
+        todos: state.todos.map((todo) => {
+          if (todo.id === action.payload.id) {
+            return { ...todo, message: action.payload.message };
+          }
+          return todo;
+        }),
       };
 
     case TOGGLE_TODO:

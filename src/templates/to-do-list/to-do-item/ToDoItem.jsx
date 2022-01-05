@@ -7,25 +7,39 @@ import IconButton from "@mui/material/IconButton";
 import DeleteSharpIcon from "@mui/icons-material/DeleteSharp";
 import CheckIcon from "@mui/icons-material/Check";
 
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useToDoItemClasses } from "./to-do-item.style";
-import { deleteToDoAction } from "../../../store/toDo/actions";
+import {
+  deleteToDoAction,
+  toggleToDoAction,
+} from "../../../store/toDo/actions";
 
-const ToDoItem = ({message, isCompleted}) => {
+const ToDoItem = ({ message, isCompleted, id }) => {
   const classes = useToDoItemClasses();
   const dispatch = useDispatch();
-  
+
+  const handleDelete = () => {
+    dispatch(deleteToDoAction(id));
+  };
+
+  const handleComplete = () => {
+    dispatch(toggleToDoAction(id));
+  };
+
   return (
     <Container className={classes.container} maxWidth="md">
       <Card>
         <CardContent className={classes.content}>
-          <Typography className={classes.typo} align="left">
+          <Typography
+            className={isCompleted ? classes.typo_isCompleted : classes.typo}
+            align="left"
+          >
             {message}
           </Typography>
-          <IconButton>
+          <IconButton onClick={handleComplete}>
             <CheckIcon fontSize="small" />
           </IconButton>
-          <IconButton>
+          <IconButton onClick={handleDelete}>
             <DeleteSharpIcon fontSize="small" />
           </IconButton>
         </CardContent>

@@ -5,11 +5,12 @@ import {
   TOGGLE_TODO,
   EDIT_TODO,
 } from "./constants";
+import nextId from "react-id-generator";
 
 export const toDoReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TODO:
-      return { ...state, todos: [...state.todos, action.payload] };
+      return { ...state, todos: [...state.todos, {id: nextId(), title: action.payload, isCompleted: false}] };
 
     case DELETE_TODO:
       return {

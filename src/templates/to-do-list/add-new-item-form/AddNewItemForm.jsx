@@ -18,11 +18,7 @@ const AddNewItemForm = () => {
     event.preventDefault();
     if (inputValue) {
       dispatch(
-        addToDoAction({
-          id: Date.now(),
-          title: inputValue,
-          isCompleted: false,
-        })
+        addToDoAction(inputValue)
       );
     }
     setInputValue("");

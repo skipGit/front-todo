@@ -13,7 +13,7 @@ export const useToDoItemClasses = makeStyles({
     paddingLeft: "20px",
     paddingTop: "10px",
   },
-  typo_isCompleted:{
+  typoIsCompleted:{
     width: "100%",
     paddingLeft: "20px",
     paddingTop: "10px",

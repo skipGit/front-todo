@@ -22,7 +22,7 @@ export const toDoReducer = (state = initialState, action) => {
         ...state,
         todos: state.todos.map((todo) => {
           if (todo.id === action.payload.id) {
-            return { ...todo, message: action.payload.message };
+            return { ...todo, title: action.payload.title };
           }
           return todo;
         }),

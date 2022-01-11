@@ -20,7 +20,7 @@ const AddNewItemForm = () => {
       dispatch(
         addToDoAction({
           id: Date.now(),
-          message: inputValue,
+          title: inputValue,
           isCompleted: false,
         })
       );

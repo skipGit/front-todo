@@ -13,4 +13,10 @@ export const useToDoItemClasses = makeStyles({
     paddingLeft: "20px",
     paddingTop: "10px",
   },
+  typoIsCompleted:{
+    width: "100%",
+    paddingLeft: "20px",
+    paddingTop: "10px",
+    textDecoration: "line-through",
+  }
 });

@@ -17,9 +17,7 @@ const AddNewItemForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (inputValue) {
-      dispatch(
-        addToDoAction(inputValue)
-      );
+      dispatch(addToDoAction(inputValue));
     }
     setInputValue("");
   };

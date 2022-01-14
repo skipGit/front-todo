@@ -1,3 +1,3 @@
 export const simpleActionGenerator = (type, payload) => {
-    return {type, payload}
-}
+  return { type, payload };
+};

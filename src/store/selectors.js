@@ -1,1 +1,1 @@
-export const selectToDoArr = state => state.todos.todos;
+export const selectToDoArr = (state) => state.todos.todos;

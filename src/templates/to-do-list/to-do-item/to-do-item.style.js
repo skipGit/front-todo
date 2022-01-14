@@ -4,7 +4,7 @@ export const useToDoItemClasses = makeStyles({
   container: {
     marginTop: "10px",
   },
-  content: {    
+  content: {
     display: "flex",
     flexDirection: "row",
   },
@@ -13,10 +13,10 @@ export const useToDoItemClasses = makeStyles({
     paddingLeft: "20px",
     paddingTop: "10px",
   },
-  typoIsCompleted:{
+  typoIsCompleted: {
     width: "100%",
     paddingLeft: "20px",
     paddingTop: "10px",
     textDecoration: "line-through",
-  }
+  },
 });

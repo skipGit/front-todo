@@ -1,14 +1,17 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import ToDoItem from "./to-do-item/ToDoItem";
 import Container from "@mui/material/Container";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { selectToDoArr } from "../../store/selectors";
+import { fetchAllTodos } from "../../asyncActions/todosAsync";
 
 const ToDoList = () => {
   const todos = useSelector(selectToDoArr);
+  const dispatch = useDispatch();
 
+  useEffect(() => dispatch(fetchAllTodos()), []);
   return (
     <Container>
       {todos.length > 0 ? (

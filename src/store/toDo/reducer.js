@@ -4,6 +4,7 @@ import {
   DELETE_TODO,
   TOGGLE_TODO,
   EDIT_TODO,
+  SHOW_TODOS,
 } from "./constants";
 import nextId from "react-id-generator";
 
@@ -16,6 +17,12 @@ export const toDoReducer = (state = initialState, action) => {
           ...state.todos,
           { id: nextId(), title: action.payload, isCompleted: false },
         ],
+      };
+
+    case SHOW_TODOS:
+      return {
+        ...state,
+        todos: [...state.todos, ...action.payload],
       };
 
     case DELETE_TODO:

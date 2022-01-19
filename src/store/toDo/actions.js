@@ -2,6 +2,7 @@ import { ADD_TODO } from "./constants";
 import { DELETE_TODO } from "./constants";
 import { TOGGLE_TODO } from "./constants";
 import { EDIT_TODO } from "./constants";
+import { SHOW_TODOS } from "./constants";
 import { simpleActionGenerator } from "../utils";
 
 export const addToDoAction = (payload) =>
@@ -12,3 +13,5 @@ export const toggleToDoAction = (payload) =>
   simpleActionGenerator(TOGGLE_TODO, payload);
 export const editToDoAction = (payload) =>
   simpleActionGenerator(EDIT_TODO, payload);
+export const showToDosAction = (payload) =>
+  simpleActionGenerator(SHOW_TODOS, payload);

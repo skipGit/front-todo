@@ -5,14 +5,14 @@ import CardContent from "@mui/material/CardContent";
 import Input from "@mui/material/Input";
 import IconButton from "@mui/material/IconButton";
 import CheckCircleSharpIcon from "@mui/icons-material/CheckCircleSharp";
-import { editToDoAction } from "../../../../store/toDo/actions";
 import { useDispatch } from "react-redux";
+import { patchTodo } from "../../../../asyncActions/todosAsync";
 
 const EditToDoForm = ({ editMode, setEditMode, id, title }) => {
   const [editedTitle, setEditedTitle] = useState(title);
   const dispatch = useDispatch();
   const submitEdit = () => {
-    dispatch(editToDoAction({ id, title: editedTitle }));
+    dispatch(patchTodo(id, editedTitle));
     setEditMode(!editMode);
   };
 

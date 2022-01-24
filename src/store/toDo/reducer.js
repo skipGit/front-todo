@@ -22,7 +22,7 @@ export const toDoReducer = (state = initialState, action) => {
     case SHOW_TODOS:
       return {
         ...state,
-        todos: [...state.todos, ...action.payload],
+        todos: action.payload,
       };
 
     case DELETE_TODO:
@@ -37,8 +37,9 @@ export const toDoReducer = (state = initialState, action) => {
         todos: state.todos.map((todo) => {
           if (todo.id === action.payload.id) {
             return { ...todo, title: action.payload.title };
+          } else {
+            return todo;
           }
-          return todo;
         }),
       };
 
@@ -46,8 +47,8 @@ export const toDoReducer = (state = initialState, action) => {
       return {
         ...state,
         todos: state.todos.map((todo) => {
-          if (todo.id === action.payload) {
-            return { ...todo, isCompleted: !todo.isCompleted };
+          if (todo.id === action.payload.id) {
+            return { ...todo, isCompleted: action.payload.isCompleted };
           }
           return todo;
         }),
